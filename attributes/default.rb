@@ -17,13 +17,8 @@
 # limitations under the License.
 #
 
-node.default['virtualbox']['urlbase'] = "http://download.virtualbox.org/virtualbox/4.0.8"
-node.default['virtualbox']['arch'] = node['kernel']['machine'] =~ /x86_64/ ? "amd64" : "i386"
-case node['platform']
-when "mac_os_x"
-  node.default['virtualbox']['version'] = "VirtualBox-4.0.8-71778"
-when "ubuntu","debian"
-  node.default['virtualbox']['version'] = "virtualbox-4.0_4.0.8-71778"
-end
-
-default['virtualbox']['url'] = ""
+default['virtualbox']['urlbase']            = "http://download.virtualbox.org/virtualbox/"
+default['virtualbox']['version']['major']   = "4.1"
+default['virtualbox']['version']['minor']   = "18"
+default['virtualbox']['version']['release'] = "78361"
+default['virtualbox']['url']                = ""
